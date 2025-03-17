@@ -1,0 +1,407 @@
+/* Основное */
+body {
+    font-family: Etude Noire;
+    margin: 0;
+    padding: 0;
+    background-color: #5C341B;
+    color: #F3E9DD;
+}
+
+/* Чердка */
+.attic {
+    background-color: #895637;
+    height: 100px;
+    position: relative;
+    display: flex; 
+    align-items: center; 
+    padding: 0 253px;
+    box-sizing: border-box; 
+}
+.search-container {
+    padding: 20px;
+    text-align: center;
+}
+.search-input {
+    font-family: Etude Noire;
+    padding: 15px; 
+    width: 60%; 
+    max-width: 800px; 
+    border: 1px solid #F3E9DD;
+    border-radius: 5px;
+    font-size: 14px; 
+    margin: 0 20px; 
+}
+.logo{
+    border: none; 
+    background: none; 
+    padding: 20;
+    margin-top: 20px; 
+    cursor: pointer;
+}
+.image-button {
+    border: none; 
+    background: none; 
+    padding: 20; 
+    cursor: pointer; 
+}
+.image-button img {
+    width: 60px; 
+    height: 60px; 
+    display: block; 
+}
+.button.catalog {
+    font-family: Etude Noire;
+    background-color: #8DC12C; 
+    border: none; 
+    padding: 15px 25px; 
+    margin: 5px; 
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px; 
+    color: #F3E9DD;
+}
+.search-results {
+    background-color: #F3E9DD;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 50%; 
+    max-width: 795px; 
+    display: none;
+    position: absolute; 
+    z-index: 1000; 
+    width: calc(100% - 506px); 
+    left:865px;
+    transform: translateX(-50%); 
+}
+
+.search-results div {
+    padding: 10px;
+    border-bottom: 1px solid #895637;
+    font-family: Etude Noire;
+    color: #895637;
+}
+
+.search-results div:last-child {
+    border-bottom: none;
+}
+
+.search-results div strong {
+    color: #8DC12C;
+}
+
+.search-results {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #F3E9DD;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none; /* Hide by default */
+}
+
+.search-result-item {
+    padding: 10px;
+    border-bottom: 1px solid #895637;
+    font-family: Etude Noire;
+    color: #895637;
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0; /* Add hover effect */
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-results-container {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F3E9DD;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-results-container .product {
+    margin-bottom: 20px;
+}
+
+/* Страница товара */
+
+.product-page {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 253px;
+    background-color: #F3E9DC;
+    margin: 20px 250px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.product-main-content {
+    display: flex; 
+    gap: 40px; 
+}
+
+.product-image-container {
+    flex: 1; 
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+    border-color: #8DC12C;
+}
+
+.product-image {
+    width: 450px;
+    border-radius: 20px;
+}
+
+.product-details {
+    flex: 2; 
+    color: #5C341B;
+}
+
+.product-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-rating {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.product-specifications {
+    margin-bottom: 30px;
+}
+
+.spec-item {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.spec-label {
+    font-weight: bold;
+}
+
+.spec-value {
+    color: #5C341B;
+}
+
+.product-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.add-to-cart {
+    background-color: #8DC12C;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #F3E9DD;
+    font-family: Etude Noire;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #7AA823;
+}
+
+.product-description-container {
+    color: #5C341B;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.description-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.product-reviews {
+    width: 100%;
+    margin-top: 20px;
+    color: #5C341B;
+    padding: 20px;
+    background-color: #F3E9DC;
+    border-radius: 20px;
+}
+
+.reviews-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.review {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.review-rating {
+    font-size: 18px;
+    color: #8DC12C;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #5C341B;
+    opacity: 0.7;
+}
+
+.show-more-reviews {
+    background-color: #8DC12C;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #F3E9DD;
+    font-family: 'Etude Noire', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.show-more-reviews:hover {
+    background-color: #7AA823;
+}
+
+/* Подвал */
+.Basement {
+    background-color: #895637;
+    height: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 0 253px;
+    box-sizing: border-box;
+}
+
+.logo {
+    margin-bottom: 20px; 
+}
+
+.social-media-container {
+    display: flex;
+    gap: 65px; 
+}
+
+.image-button2 {
+    border: none;
+    background: none;
+    padding: 0; 
+    cursor: pointer;
+}
+
+.image-button2 img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.footer-text {
+    color: #F3E9DD;
+    font-size: 20px; 
+    font-family: Etude Noire, sans-serif;
+    width: 550px;
+}
+
+.footer-text2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    color: #F3E9DD;
+    font-size: 20px; 
+    font-family: Etude Noire, sans-serif;
+    position: absolute; 
+    right: 253px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.footer-text2 .column {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.footer-text2 h4 {
+    font-size: 24px; 
+    margin-bottom: 20px; 
+}
+
+.footer-text2 a {
+    color: #F3E9DD;
+    text-decoration: none; 
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.footer-text2 a:hover {
+    text-decoration: underline; 
+}

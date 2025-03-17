@@ -1,0 +1,981 @@
+/* Основное */
+body {
+    font-family: Etude Noire;
+    margin: 0;
+    padding: 0;
+    background-color: #5C341B;
+    color: #F3E9DD;
+}
+
+/* Бургер-меню */
+.burger-menu {
+    display: none; /* По умолчанию скрыто */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #F3E9DD;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Чердак */
+.attic {
+    background-color: #895637;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.search-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.search-input {
+    font-family: Etude Noire;
+    padding: 15px;
+    width: 60%;
+    max-width: 800px;
+    border: 1px solid #F3E9DD;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 0 20px;
+}
+
+.logo {
+    border: none;
+    background: none;
+    padding: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.image-button {
+    border: none;
+    background: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.image-button img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.button.catalog {
+    font-family: Etude Noire;
+    background-color: #8DC12C;
+    border: none;
+    padding: 15px 25px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    color: #F3E9DD;
+}
+
+/* Каталог */
+.title {
+    font-size: 48px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.recommendations {
+    display: grid;
+    grid-template-columns: 1fr 344px;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.all {
+    grid-column: 1 / -1;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.filtr {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.background-shape {
+    position: relative;
+    width: 344px;
+    height: 750px;
+    border-radius: 20px;
+    background-color: #895637;
+}
+
+.choice-shape {
+    width: 316px;
+    height: 48px;
+    border-radius: 20px;
+    background-color: #F3E9DD;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    color: #381a08;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.choice-shape::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.choice-shape li {
+    padding: 10px;
+    font-size: 16px;
+    color: #381a08;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.choice-shape li:last-child {
+    border-bottom: none;
+}
+
+.choice-shape li:hover {
+    background-color: #e0d0c0;
+}
+
+.price-range-container {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 316px;
+    text-align: center;
+}
+
+.price-range {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.price-range-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #F3E9DD;
+}
+
+.special-offers {
+    position: absolute;
+    top: 325px;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.special-offer-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #F3E9DD;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s, outline 0.3s;
+    border: 2px solid transparent;
+}
+
+.special-offer-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.special-offer-option img {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.special-offer-option span {
+    cursor: pointer;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.special-offer-option input:checked ~ img,
+.special-offer-option input:checked ~ span {
+    opacity: 0.7;
+}
+
+.special-offer-option input:checked {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    outline: 2px solid #8DC12C;
+}
+
+.button2 {
+    font-family: Etude Noire;
+    background-color: #8DC12C;
+    border: none;
+    padding: 15px 25px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    color: #F3E9DD;
+    position: absolute;
+    bottom: 20px;
+    left: 25%;
+}
+
+.text1 {
+    font-family: Etude Noire;
+    font-size: 24px;
+    color: #F3E9DD;
+    position: absolute;
+    top: 10px;
+    left: 5%;
+}
+
+.text2 {
+    font-family: Etude Noire;
+    font-size: 24px;
+    color: #F3E9DD;
+    position: absolute;
+    top: 125px;
+    left: 5%;
+}
+
+.text3 {
+    font-family: Etude Noire;
+    font-size: 24px;
+    color: #F3E9DD;
+    position: absolute;
+    top: 225px;
+    left: 5%;
+}
+
+.text1-data, .text2-data {
+    font-family: Etude Noire;
+    font-size: 18px;
+    color: #F3E9DD;
+    position: absolute;
+    left: 5%;
+    margin-top: 5px;
+}
+
+.text1-data {
+    top: 75px;
+    width: 250px;
+}
+
+.text2-data {
+    top: 185px;
+}
+
+.text3-data, .text3-data1 {
+    font-family: Etude Noire;
+    font-size: 18px;
+    color: #F3E9DD;
+    position: absolute;
+    left: 5%;
+    margin-top: 5px;
+}
+
+.text3-data {
+    top: 600px;
+}
+
+.text3-data1 {
+    top: 630px;
+}
+
+.text3-data-value {
+    margin-left: 100px;
+    font-weight: bold;
+}
+
+.text3-data1-value {
+    margin-left: 200px;
+    font-weight: bold;
+}
+
+.product-container {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.product {
+    position: relative;
+    box-shadow: 0 2px 5px #381a08;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    align-self: flex-start;
+    overflow: hidden;
+    padding: 20px;
+    margin: 0;
+}
+
+.image-container {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    border-radius: 20px;
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.product-somthing {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.product-price-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    position: relative;
+    left: 750px;
+    bottom: 75px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    bottom: 100px;
+    left: 650px;
+}
+
+.quantity-button {
+    border: none;
+    background-color: #F3E9DD;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #381a08;
+}
+
+.quantity-button:hover {
+    background-color: #e0d0c0;
+}
+
+.quantity {
+    font-size: 16px;
+    color: #381a08;
+}
+
+.image-button-cart {
+    position: relative;
+    bottom: 30px;
+    left: 160px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.image-button-cart img {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.image-button1 {
+    position: relative;
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    top: 50px;
+    left: 270px;
+}
+
+.image-button1 img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+/* Подвал */
+.Basement {
+    background-color: #895637;
+    height: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 253px;
+    box-sizing: border-box;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.social-media-container {
+    display: flex;
+    gap: 65px;
+}
+
+.image-button2 {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.image-button2 img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.footer-text {
+    color: #F3E9DD;
+    font-size: 20px;
+    font-family: Etude Noire, sans-serif;
+    width: 550px;
+}
+
+.footer-text2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    color: #F3E9DD;
+    font-size: 20px;
+    font-family: Etude Noire, sans-serif;
+    position: absolute;
+    right: 253px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer-text2 .column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-text2 h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-text2 a {
+    color: #F3E9DD;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.footer-text2 a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+    .title {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .recommendations {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .recommendations {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .product-price {
+        left: 500px;
+    }
+
+    .quantity-control {
+        left: 400px;
+    }
+}
+
+@media (max-width: 805px) {
+    .menu-container {
+        display: none; /* Скрываем меню по умолчанию */
+        flex-direction: column;
+        position: absolute;
+        top: 100px; /* Отступ от верхней части */
+        left: 0;
+        width: 100%;
+        background-color: #895637;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .Basement {
+        height: auto; /* Автоматическая высота */
+        padding: 20px 10px; /* Уменьшаем отступы */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+
+    .footer-text {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+        width: 100%; /* Растягиваем текст на всю ширину */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+
+    .footer-text2 {
+        grid-template-columns: 1fr; /* Одна колонка */
+        gap: 20px; /* Уменьшаем расстояние между элементами */
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none; /* Убираем трансформацию */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+
+    .footer-text2 .column {
+        gap: 5px; /* Уменьшаем расстояние между элементами */
+    }
+
+    .footer-text2 h4 {
+        font-size: 20px; /* Уменьшаем размер заголовков */
+        margin-bottom: 10px; /* Уменьшаем отступ снизу */
+    }
+
+    .footer-text2 a {
+        font-size: 16px; /* Уменьшаем размер ссылок */
+    }
+
+    .social-media-container {
+        gap: 20px; /* Уменьшаем расстояние между иконками */
+        justify-content: center; /* Выравниваем иконки по центру */
+    }
+
+    .image-button2 img {
+        width: 30px; /* Уменьшаем размер иконок */
+        height: 30px;
+    }
+
+    .logo img {
+        width: 80px; /* Уменьшаем размер логотипа */
+        height: auto;
+    }
+
+    .burger-menu {
+        display: flex; /* Показываем бургер-меню */
+    }
+
+    .menu-container.active {
+        display: flex; /* Показываем меню при активации */
+    }
+
+    .search-input {
+        width: 100%; /* Растягиваем поиск на всю ширину */
+        margin: 10px 0;
+    }
+
+    .button.catalog {
+        width: 100%; /* Растягиваем кнопку на всю ширину */
+        text-align: center;
+    }
+
+    .image-button {
+        margin: 5px 0;
+        width: 250px;
+    }
+
+    .image-button2 {
+        width: 30px;
+    }
+
+    .menu-container {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .menu-container.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Перенос блока с оплатой и доставкой вниз */
+    .text3, .text3-data, .text3-data1 {
+        position: static;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .text3-data-value, .text3-data1-value {
+        margin-left: 0;
+    }
+
+    .button2 {
+        position: static;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Основные стили */
+    body {
+        font-size: 14px; /* Уменьшаем базовый размер шрифта */
+    }
+
+    /* Бургер-меню */
+    .burger-menu {
+        display: flex; /* Показываем бургер-меню */
+    }
+
+    .menu-container {
+        display: none; /* Скрываем обычное меню */
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #895637;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .menu-container.active {
+        display: flex; /* Показываем меню при активации */
+    }
+
+    .search-input {
+        width: 100%; /* Растягиваем поиск на всю ширину */
+        margin: 10px 0;
+    }
+
+    .button.catalog {
+        width: 100%; /* Растягиваем кнопку на всю ширину */
+        text-align: center;
+    }
+
+    /* Чердак (Header) */
+    .attic {
+        padding: 0 20px; /* Уменьшаем отступы */
+    }
+
+    .image-button img {
+        width: 40px; /* Уменьшаем размер иконок */
+        height: 40px;
+    }
+
+    /* Каталог */
+    .title {
+        font-size: 36px; /* Уменьшаем размер заголовка */
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center; /* Центрируем заголовок */
+    }
+
+    .recommendations {
+        grid-template-columns: 1fr; /* Одна колонка для товаров и фильтров */
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .filtr {
+        grid-column: 1 / -1; /* Фильтр занимает всю ширину */
+        grid-row: auto;
+    }
+
+    .background-shape {
+        width: 100%; /* Растягиваем на всю ширину */
+        height: auto; /* Автоматическая высота */
+        text-align: center; /* Центрируем текст по горизонтали */
+    }
+
+    .choice-shape {
+        width: 90%; /* Уменьшаем ширину выпадающего списка */
+        margin: 0 auto; /* Центрируем выпадающий список */
+    }
+
+    /* Блоки с товарами */
+    .product-container {
+        grid-column: 1 / -1; /* Товары занимают всю ширину */
+        text-align: center; /* Центрируем текст по горизонтали */
+    }
+
+    .product {
+        flex-direction: column; /* Элементы товара в колонку */
+        align-items: center;
+        text-align: center;
+        padding: 20px; /* Добавляем отступы внутри блока */
+        border: 1px solid #F3E9DD; /* Добавляем рамку для аккуратности */
+        border-radius: 10px; /* Закругляем углы */
+        margin-bottom: 20px; /* Отступ между блоками товаров */
+    }
+
+    .image-container {
+        margin-right: 0; /* Убираем отступ справа */
+        margin-bottom: 10px; /* Добавляем отступ снизу */
+        text-align: center; /* Центрируем изображение */
+    }
+
+    .product-image {
+        width: 150px; /* Фиксируем размер изображения */
+        height: 150px;
+        border-radius: 10px; /* Закругляем углы изображения */
+    }
+
+    .product-info {
+        align-items: center; /* Центрируем элементы по вертикали */
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+
+    .product-name {
+        font-size: 20px; /* Уменьшаем размер шрифта */
+        margin-bottom: 10px; /* Отступ снизу */
+    }
+
+    .product-somthing {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+        margin-bottom: 10px; /* Отступ снизу */
+    }
+
+    .product-price-and-button {
+        display: flex;
+        flex-direction: column; /* Элементы в колонку */
+        align-items: center; /* Центрируем по горизонтали */
+        gap: 10px; /* Расстояние между элементами */
+    }
+
+    .product-price {
+        font-size: 18px; /* Уменьшаем размер шрифта */
+        margin: 0; /* Убираем отступы */
+    }
+
+    .quantity-control {
+        display: flex;
+        align-items: center; /* Центрируем кнопки и количество */
+        gap: 10px; /* Расстояние между кнопками и количеством */
+    }
+
+    .quantity-button {
+        width: 30px; /* Фиксируем размер кнопок */
+        height: 30px;
+        border-radius: 50%; /* Делаем кнопки круглыми */
+        background-color: #F3E9DD;
+        color: #381a08;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quantity {
+        font-size: 16px;
+        color: #381a08;
+    }
+
+    .image-button-cart {
+        margin-top: 10px; /* Добавляем отступ сверху */
+        text-align: center; /* Центрируем кнопку удаления */
+    }
+
+    /* Центрирование текста в блоке фильтров */
+    .text1, .text2, .text3 {
+        text-align: center; /* Центрируем заголовки */
+        left: 0; /* Убираем смещение влево */
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+
+    .text1-data, .text2-data, .text3-data, .text3-data1 {
+        text-align: center; /* Центрируем данные */
+        left: 0; /* Убираем смещение влево */
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+
+    .special-offers {
+        display: none;
+    }
+
+    .button2 {
+        margin-left: auto; /* Центрируем кнопку "Оплатить" */
+        margin-right: auto;
+        display: block; /* Делаем кнопку блочным элементом */
+    }
+
+    /* Подвал (Footer) */
+    .Basement {
+        height: auto; /* Автоматическая высота */
+        padding: 20px; /* Уменьшаем отступы */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+
+    .footer-text {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+        width: 100%; /* Растягиваем текст на всю ширину */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+
+    .footer-text2 {
+        grid-template-columns: repeat(2, 1fr); /* Две колонки */
+        gap: 20px; /* Уменьшаем расстояние между элементами */
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none; /* Убираем трансформацию */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+
+    .footer-text2 .column {
+        gap: 5px; /* Уменьшаем расстояние между элементами */
+    }
+
+    .footer-text2 h4 {
+        font-size: 20px; /* Уменьшаем размер заголовков */
+        margin-bottom: 10px; /* Уменьшаем отступ снизу */
+    }
+
+    .footer-text2 a {
+        font-size: 16px; /* Уменьшаем размер ссылок */
+    }
+
+    .social-media-container {
+        gap: 20px; /* Уменьшаем расстояние между иконками */
+        justify-content: center; /* Выравниваем иконки по центру */
+    }
+
+    .image-button2 img {
+        width: 40px; /* Уменьшаем размер иконок */
+        height: 40px;
+    }
+
+    .logo img {
+        width: 100px; /* Уменьшаем размер логотипа */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Подвал */
+    .Basement {
+        height: auto; /* Автоматическая высота */
+        padding: 20px 10px; /* Уменьшаем отступы */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+
+    .footer-text {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+        width: 100%; /* Растягиваем текст на всю ширину */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+
+    .footer-text2 {
+        grid-template-columns: 1fr; /* Одна колонка */
+        gap: 20px; /* Уменьшаем расстояние между элементами */
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none; /* Убираем трансформацию */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+
+    .footer-text2 .column {
+        gap: 5px; /* Уменьшаем расстояние между элементами */
+    }
+
+    .footer-text2 h4 {
+        font-size: 20px; /* Уменьшаем размер заголовков */
+        margin-bottom: 10px; /* Уменьшаем отступ снизу */
+    }
+
+    .footer-text2 a {
+        font-size: 16px; /* Уменьшаем размер ссылок */
+    }
+
+    .social-media-container {
+        gap: 20px; /* Уменьшаем расстояние между иконками */
+        justify-content: center; /* Выравниваем иконки по центру */
+    }
+
+    .image-button2 img {
+        width: 30px; /* Уменьшаем размер иконок */
+        height: 30px;
+    }
+
+    .logo img {
+        width: 80px; /* Уменьшаем размер логотипа */
+        height: auto;
+    }
+}
