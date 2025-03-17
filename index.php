@@ -1,3 +1,8 @@
+
+<?php
+include 'db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +24,9 @@
     
         
         <div class="menu-container" id="menuContainer">
-            <input type="text" class="search-input" id="searchInput" placeholder="Название товара/категория...">
+            <form action="search.php">
+            <input value="Поиск" type="text" class="search-input" id="searchInput" placeholder="Название товара/категория...">
+        </form>
             <a href="Catalog.html">
                 <button class="button catalog">Каталог</button>
             </a>
