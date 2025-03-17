@@ -16,7 +16,7 @@
             <span></span>
             <span></span>
         </div>
-    
+        
         
         <div class="menu-container" id="menuContainer">
             <input type="text" class="search-input" id="searchInput" placeholder="Название товара/категория...">
